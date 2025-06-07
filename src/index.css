@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  font-family: theme('fontFamily.inter');
+}
+
+body {
+  @apply text-black bg-white;
+}
+
+@layer components {
+  .section-container {
+    @apply container mx-auto max-w-screen-xl px-4;
+  }
+}
+
+/* 卡片整体 */
+.fourth-screen-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fourth-screen-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* 图标容器：用于叠放背景色块和实际图像 */
+.card-group-24 {
+  position: relative;
+  width: 96px;   /* 和 img 的 w-24 对应 */
+  height: 96px;  /* 和 img 的 h-24 对应 */
+  margin-bottom: 16px;
+}
+
+/* 背景色块 */
+.card-rectangle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #DBEAFE 0%, #EFF6FF 100%);
+}
+
+/* 图像 */
+.card-group-24 img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* 标题 + 描述 容器 */
+.card-frame-25 {
+  max-width: 240px;
+}
+
+/* 标题 */
+.fourth-screen-card-title {
+  font-size: 1.25rem;    /* 20px */
+  font-weight: 600;
+  color: #1F2937;        /* 深灰/近黑 */
+  margin-bottom: 8px;
+}
+
+/* 描述 */
+.fourth-screen-card-description {
+  font-size: 1rem;       /* 16px */
+  line-height: 1.5;
+  color: #6B7280;        /* 灰色文本 */
+}
