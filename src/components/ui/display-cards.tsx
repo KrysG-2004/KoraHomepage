@@ -25,8 +25,8 @@ function DisplayCard({
   return (
     <div
       className={cn(
-        // 减弱左侧光影效果
-        "relative flex h-48 w-80 md:h-52 md:w-96 skew-y-[8deg] select-none flex-col justify-between rounded-2xl border-2 bg-white/60 backdrop-blur-xl px-6 py-5 transition-all duration-700 shadow-2xl after:absolute after:-left-2 after:top-[-5%] after:h-[110%] after:w-16 after:bg-gradient-to-r after:from-slate-50/60 after:via-slate-50/40 after:to-transparent after:content-[''] hover:border-white/60 hover:shadow-3xl [&>*]:flex [&>*]:items-center [&>*]:gap-3",
+        // 移动端适配：更小尺寸，减弱左侧光影效果
+        "relative flex h-40 w-72 sm:h-44 sm:w-80 md:h-52 md:w-96 skew-y-[8deg] select-none flex-col justify-between rounded-2xl border-2 bg-white/60 backdrop-blur-xl px-4 py-4 sm:px-6 sm:py-5 transition-all duration-700 shadow-2xl after:absolute after:-left-2 after:top-[-5%] after:h-[110%] after:w-16 after:bg-gradient-to-r after:from-slate-50/60 after:via-slate-50/40 after:to-transparent after:content-[''] hover:border-white/60 hover:shadow-3xl [&>*]:flex [&>*]:items-center [&>*]:gap-3",
         className
       )}
     >
@@ -41,7 +41,7 @@ function DisplayCard({
           <p className="text-xs font-semibold text-slate-600 uppercase tracking-wide mb-1">
             Human Data
           </p>
-          <p className={cn("text-lg md:text-xl font-bold text-slate-800", titleClassName)}>
+          <p className={cn("text-base sm:text-lg md:text-xl font-bold text-slate-800", titleClassName)}>
             {title}
           </p>
         </div>
@@ -49,7 +49,7 @@ function DisplayCard({
       
       {/* 主要描述文本 - 居中 */}
       <div className="flex-1 flex items-center">
-        <p className="text-slate-800 font-semibold text-base md:text-lg leading-snug">
+        <p className="text-slate-800 font-semibold text-sm sm:text-base md:text-lg leading-snug">
           {description}
         </p>
       </div>
@@ -99,8 +99,8 @@ export default function DisplayCards({ cards }: DisplayCardsProps) {
       date: "Just now",
       iconClassName: "text-purple-500",
       titleClassName: "text-purple-500",
-      // 减少重叠 - 更大的横向和纵向偏移
-      className: "[grid-area:stack] -translate-x-32 translate-y-10 hover:-translate-y-16 before:absolute before:w-[100%] before:outline-1 before:rounded-2xl before:outline-border before:h-[100%] before:content-[''] before:bg-slate-900/20 grayscale-[40%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0 before:opacity-30",
+      // 移动端优化：较小偏移，桌面端较大偏移
+      className: "[grid-area:stack] -translate-x-16 translate-y-6 md:-translate-x-32 md:translate-y-10 hover:-translate-y-16 before:absolute before:w-[100%] before:outline-1 before:rounded-2xl before:outline-border before:h-[100%] before:content-[''] before:bg-slate-900/20 grayscale-[40%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0 before:opacity-30",
     },
     {
       icon: <Sparkles className="size-4 text-emerald-300" />,
@@ -109,17 +109,17 @@ export default function DisplayCards({ cards }: DisplayCardsProps) {
       date: "Just now", 
       iconClassName: "text-emerald-500",
       titleClassName: "text-emerald-500",
-      // 更大的偏移以减少重叠
-      className: "[grid-area:stack] -translate-x-64 translate-y-20 hover:translate-y-4 before:absolute before:w-[100%] before:outline-1 before:rounded-2xl before:outline-border before:h-[100%] before:content-[''] before:bg-slate-900/20 grayscale-[60%] hover:before:opacity-10 before:transition-opacity before:duration-700 hover:grayscale-[20%] before:left-0 before:top-0 before:opacity-50",
+      // 移动端优化：较小偏移，桌面端较大偏移
+      className: "[grid-area:stack] -translate-x-32 translate-y-12 md:-translate-x-64 md:translate-y-20 hover:translate-y-4 before:absolute before:w-[100%] before:outline-1 before:rounded-2xl before:outline-border before:h-[100%] before:content-[''] before:bg-slate-900/20 grayscale-[60%] hover:before:opacity-10 before:transition-opacity before:duration-700 hover:grayscale-[20%] before:left-0 before:top-0 before:opacity-50",
     },
   ];
 
   const displayCards = cards || defaultCards;
 
   return (
-    // 卡片组往右对齐
+    // 移动端居中偏右，桌面端右对齐，增加左边距确保卡片完全显示
     <div 
-      className="grid [grid-template-areas:'stack'] place-items-end opacity-100 overflow-visible ml-8 lg:ml-12"
+      className="grid [grid-template-areas:'stack'] place-items-center lg:place-items-end opacity-100 overflow-visible ml-8 sm:ml-12 lg:ml-16"
     >
       {displayCards.map((cardProps, index) => (
         <DisplayCard key={index} {...cardProps} />

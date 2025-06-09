@@ -69,7 +69,7 @@ export default function WhyHumanData() {
             id="human-data"
             style={{ backgroundImage: "url('/background5.png')" }}
         >
-            <div className="section-container relative z-10">
+            <div className="section-container relative z-10 overflow-visible">
                 {/* 顶部简洁标题部分 */}
                 <div className="text-center mb-20">
                     <motion.h2 
@@ -103,7 +103,7 @@ export default function WhyHumanData() {
                 </div>
 
                 {/* 核心内容：左右分离布局 */}
-                <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20 max-w-none mx-auto px-4 lg:px-8">
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 lg:gap-20 max-w-none mx-auto px-4 lg:px-8">
                     {/* 左侧：Why Human Data 标题 - 往左对齐 */}
                     <div className="lg:w-2/5 flex justify-center lg:justify-start" data-reveal="why">
                         <div className="text-center lg:text-left">
@@ -112,7 +112,7 @@ export default function WhyHumanData() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-                                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-slate-900 leading-tight mb-6"
+                                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-slate-900 leading-tight mb-4 sm:mb-6"
                             >
                                 Why
                                 <br />
@@ -129,7 +129,7 @@ export default function WhyHumanData() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-                                className="text-lg text-slate-600 leading-relaxed max-w-md mx-auto lg:mx-0"
+                                className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-md mx-auto lg:mx-0"
                             >
                                 Discover the three key advantages that make human data essential for next-generation AI systems.
                             </motion.p>
@@ -137,8 +137,8 @@ export default function WhyHumanData() {
                     </div>
 
                     {/* 右侧：堆叠卡片 - 往右对齐 */}
-                    <div className="lg:w-3/5 flex justify-center lg:justify-end">
-                        <div className="relative" data-reveal="why">
+                    <div className="lg:w-3/5 flex justify-center lg:justify-end overflow-visible">
+                        <div className="relative w-full max-w-none" data-reveal="why">
                             <DisplayCards />
                         </div>
                     </div>
