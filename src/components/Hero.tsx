@@ -7,6 +7,12 @@ export default function Hero() {
             className="relative overflow-hidden bg-cover bg-center min-h-screen flex items-center"
             style={{ backgroundImage: "url('/background1.png')" }}
         >
+            {/* 顶部渐变过渡 - 从Header的半透明白色过渡到Hero背景 */}
+            <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-white/80 via-white/30 to-transparent z-0"></div>
+            
+            {/* 底部渐变过渡 - 向FeatureGrid页面过渡 */}
+            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-slate-50/60 via-slate-50/20 to-transparent z-0"></div>
+            
             <div className="pointer-events-none absolute inset-0 -z-10 flex justify-center">
                 <div className="h-[600px] w-[600px] rounded-full bg-primary/20 blur-3xl" />
             </div>

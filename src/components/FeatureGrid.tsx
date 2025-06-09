@@ -70,6 +70,12 @@ export default function FeatureGrid() {
             id="opportunity"
             style={{ backgroundImage: "url('/background2.png')" }}
         >
+            {/* 顶部渐变过渡 - 从Hero页面过渡到当前页背景 */}
+            <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-slate-50/40 via-slate-50/15 to-transparent z-0"></div>
+            
+            {/* 底部渐变过渡 - 向TalentCommunity页面过渡 */}
+            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-slate-50/50 via-slate-50/25 to-transparent z-0"></div>
+            
             <div className="section-container relative z-10 max-w-7xl mx-auto">
                 {/* 第一部分：AI Agent 介绍 */}
                 <div className="text-center mb-24">

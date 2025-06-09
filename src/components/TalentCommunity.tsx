@@ -31,13 +31,31 @@ export default function TalentCommunity() {
 
     return (
         <section
-            className="relative bg-gradient-to-br from-[#F8F9FF] to-[#EEF2FF] py-20 min-h-screen flex items-center overflow-hidden"
+            className="relative py-20 min-h-screen flex items-center overflow-hidden"
             id="community"
+            style={{ backgroundImage: "url('/background3.png')" }}
         >
-            {/* 背景组件 */}
-            <NetworkBackground />
+            {/* 背景渐变叠加层 - 增强视觉效果 */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#F8F9FF]/90 via-[#EEF2FF]/85 to-[#E0E7FF]/80 z-0"></div>
             
-            <div className="section-container relative z-10 flex flex-col-reverse items-center gap-6 md:gap-10 lg:flex-row">
+            {/* 中间渐变层 - 增强层次感 */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#EEF2FF]/60 to-transparent z-1"></div>
+            
+            {/* 顶部渐变过渡 - 从FeatureGrid页面过渡 */}
+            <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-slate-50/70 via-slate-50/40 via-[#F8F9FF]/30 to-transparent z-10"></div>
+            
+            {/* 中下部过渡区域 - 增强向下页面的过渡 */}
+            <div className="absolute bottom-1/3 left-0 right-0 h-48 bg-gradient-to-b from-transparent via-[#E0E7FF]/40 to-blue-50/60 z-8"></div>
+            
+            {/* 底部渐变过渡 - 向HireSmart页面过渡 */}
+            <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-blue-50/80 via-blue-50/50 via-[#EEF2FF]/30 to-transparent z-10"></div>
+            
+            {/* 背景网络组件 */}
+            <div className="absolute inset-0 z-5">
+                <NetworkBackground />
+            </div>
+            
+            <div className="section-container relative z-20 flex flex-col-reverse items-center gap-6 md:gap-10 lg:flex-row">
                 <div className="w-full lg:w-1/2">
                     <h1 className="mb-6 text-3xl md:text-4xl font-black text-[#1E293B] flex flex-col gap-2 text-center lg:text-left">
                         <span>AI-native talent</span>

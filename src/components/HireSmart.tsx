@@ -28,6 +28,15 @@ export default function HireSmart() {
             className="relative flex items-center py-20 min-h-screen bg-cover bg-center before:absolute before:inset-0 before:bg-gradient-to-r before:from-white before:to-blue-50"
             style={{ backgroundImage: "url('/background4.png')" }}
         >
+            {/* 顶部渐变过渡 - 从TalentCommunity页面的蓝色过渡 */}
+            <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-blue-50/80 via-blue-50/50 via-white/20 to-transparent z-5"></div>
+            
+            {/* 中间增强层 - 增加过渡的流畅性 */}
+            <div className="absolute top-1/4 left-0 right-0 h-64 bg-gradient-to-b from-transparent via-white/15 to-transparent z-3"></div>
+            
+            {/* 底部渐变过渡 - 向WhyHumanData页面的过渡 */}
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent via-blue-50/40 to-blue-50/70 z-5"></div>
+            
             <div className="relative z-10 mx-auto max-w-6xl px-4 space-y-12">
                 {/* 标题区域 */}
                 <div data-reveal="hire" className="mx-auto max-w-3xl text-center">

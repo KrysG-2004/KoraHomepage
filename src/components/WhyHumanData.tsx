@@ -65,10 +65,16 @@ export default function WhyHumanData() {
 
     return (
         <section
-            className="relative bg-cover bg-center py-16 min-h-screen flex flex-col justify-center"
+            className="relative bg-cover bg-center py-16 min-h-screen flex flex-col justify-center overflow-x-visible"
             id="human-data"
             style={{ backgroundImage: "url('/background5.png')" }}
         >
+            {/* 顶部渐变过渡 - 从上页的蓝白渐变过渡到当前页 */}
+            <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-blue-50/60 via-blue-50/30 to-transparent z-0"></div>
+            
+            {/* 底部渐变过渡 - 从当前页过渡到白色Footer */}
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white/80 via-white/40 to-transparent z-0"></div>
+            
             <div className="section-container relative z-10 overflow-visible">
                 {/* 顶部简洁标题部分 */}
                 <div className="text-center mb-20">
@@ -103,9 +109,9 @@ export default function WhyHumanData() {
                 </div>
 
                 {/* 核心内容：左右分离布局 */}
-                <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 lg:gap-20 max-w-none mx-auto px-4 lg:px-8">
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 lg:gap-20 max-w-none mx-auto px-2 lg:px-4">
                     {/* 左侧：Why Human Data 标题 - 往左对齐 */}
-                    <div className="lg:w-2/5 flex justify-center lg:justify-start" data-reveal="why">
+                    <div className="lg:w-1/3 flex justify-center lg:justify-start" data-reveal="why">
                         <div className="text-center lg:text-left">
                             <motion.h3 
                                 initial={{ opacity: 0, x: -50 }}
@@ -137,7 +143,7 @@ export default function WhyHumanData() {
                     </div>
 
                     {/* 右侧：堆叠卡片 - 往右对齐 */}
-                    <div className="lg:w-3/5 flex justify-center lg:justify-end overflow-visible">
+                    <div className="lg:w-2/3 flex justify-center lg:justify-end overflow-visible">
                         <div className="relative w-full max-w-none" data-reveal="why">
                             <DisplayCards />
                         </div>
