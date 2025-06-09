@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import DisplayCards from './ui/display-cards'
+import { handleAllowedMobileClick } from '../utils/mobileUtils'
 
 const svgs = [
     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -157,6 +158,10 @@ export default function WhyHumanData() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.4 }}
+                        onClick={() => handleAllowedMobileClick(() => {
+                            // 这里可以添加Learn more about Human Data的实际逻辑
+                            console.log('Learn more about Human Data clicked');
+                        })}
                         className="rounded-md bg-primary px-8 py-4 font-medium text-white transition hover:bg-primary/90 hover:scale-105"
                     >
                         → Learn more about Human Data

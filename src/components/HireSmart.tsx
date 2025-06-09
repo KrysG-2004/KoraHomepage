@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useScrollReveal } from '../hooks/useScrollReveal'
+import { handleMobileClick } from '../utils/mobileUtils'
 
 const items = [
     {
@@ -83,7 +84,10 @@ export default function HireSmart() {
 
                 {/* 按钮与说明 */}
                 <div data-reveal="hire" className="text-center">
-                    <button className="btn-shimmer mt-8 rounded-md px-8 py-3 font-medium text-white shadow-md">
+                    <button 
+                        onClick={() => handleMobileClick()}
+                        className="btn-shimmer mt-8 rounded-md px-8 py-3 font-medium text-white shadow-md"
+                    >
                         Start Hiring
                     </button>
                     <p className="mt-4 font-semibold text-gray-900">

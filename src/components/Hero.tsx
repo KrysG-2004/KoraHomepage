@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import HeroChat from './HeroChat'
+import { handleMobileClick } from '../utils/mobileUtils'
 
 export default function Hero() {
     return (
@@ -38,10 +39,16 @@ export default function Hero() {
                         world’s fastest‑growing AI companies and labs
                     </motion.p>
                     <div className="mt-10 flex justify-center gap-4 md:justify-start">
-                        <button className="rounded-md bg-primary px-6 py-3 font-medium text-white transition hover:bg-primary/90">
+                        <button 
+                            onClick={() => handleMobileClick()}
+                            className="rounded-md bg-primary px-6 py-3 font-medium text-white transition hover:bg-primary/90"
+                        >
                             Join as Talent
                         </button>
-                        <button className="flex items-center gap-2 rounded-md border border-primary bg-white px-6 py-3 font-medium text-primary transition hover:bg-slate-100">
+                        <button 
+                            onClick={() => handleMobileClick()}
+                            className="flex items-center gap-2 rounded-md border border-primary bg-white px-6 py-3 font-medium text-primary transition hover:bg-slate-100"
+                        >
                             Find Experts
                             <svg
                                 className="h-4 w-4"

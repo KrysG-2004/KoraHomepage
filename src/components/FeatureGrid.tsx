@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useScrollReveal } from '../hooks/useScrollReveal'
+import { handleMobileClick, handleAllowedMobileClick } from '../utils/mobileUtils'
 
 const features = [
     {
@@ -188,6 +189,7 @@ export default function FeatureGrid() {
                             }}
                             whileTap={{ scale: 0.98 }}
                             transition={{ duration: 0.15, ease: "easeOut" }}
+                            onClick={() => handleMobileClick()}
                             className="group relative overflow-hidden bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 
                                      rounded-2xl px-10 py-4 font-semibold text-white shadow-xl hover:shadow-2xl 
                                      transition-all duration-300 backdrop-blur-sm border border-blue-500/20
@@ -220,6 +222,10 @@ export default function FeatureGrid() {
                             }}
                             whileTap={{ scale: 0.98 }}
                             transition={{ duration: 0.15, ease: "easeOut" }}
+                            onClick={() => handleAllowedMobileClick(() => {
+                                // 这里可以添加Talent Guide的实际逻辑
+                                console.log('Talent Guide clicked');
+                            })}
                             className="group relative overflow-hidden bg-white/5 backdrop-blur-md 
                                      rounded-2xl px-10 py-4 font-medium text-gray-700 hover:text-gray-900
                                      border border-gray-200/50 hover:border-gray-300/70 shadow-lg hover:shadow-xl 

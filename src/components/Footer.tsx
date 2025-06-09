@@ -1,3 +1,5 @@
+import { handleMobileClick, handleAllowedMobileClick } from '../utils/mobileUtils'
+
 export default function Footer() {
     const year = new Date().getFullYear()
     return (
@@ -18,8 +20,20 @@ export default function Footer() {
                         <a href="#opportunity" className="hover:text-primary">Opportunity</a>
                         <a href="#community" className="hover:text-primary">Community</a>
                         <a href="#hire" className="hover:text-primary">Hire</a>
-                        <a href="#talent" className="hover:text-primary">Join as Talent</a>
-                        <a href="#human-data" className="hover:text-primary">Learn more about Human Data</a>
+                        <button 
+                            onClick={() => handleMobileClick()}
+                            className="hover:text-primary text-left text-sm"
+                        >
+                            Join as Talent
+                        </button>
+                        <button 
+                            onClick={() => handleAllowedMobileClick(() => {
+                                console.log('Learn more about Human Data clicked');
+                            })}
+                            className="hover:text-primary text-left text-sm"
+                        >
+                            Learn more about Human Data
+                        </button>
                     </nav>
                 </div>
             </div>
