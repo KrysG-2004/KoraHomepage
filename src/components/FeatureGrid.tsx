@@ -25,29 +25,29 @@ const feature_svgs = [
 const jobs = [
     {
         id: 1,
-        title: 'Domain Expert for AI Evaluation',
-        rate: '$30–200/hour',
-        company: 'Applied AI Lab',
+        title: 'Domain Expert for AI Training & Consulting (No coding required)',
+        rate: '$35–150/hour (Part-time)',
+        company: 'Top AI Lab',
         location: 'Remote (CN preferred)'
     },
     {
         id: 2,
-        title: 'Software Engineer – AI Training Tasks',
-        rate: '$30–80/hour',
-        company: 'Global AI Startup',
-        location: 'Remote (Flexible timezone)'
+        title: 'AI Training Intern — Top University Students Only',
+        rate: '$5–80/hour (Part-time/Full-time)',
+        company: 'Fortune 500 tech firm',
+        location: 'Remote'
     },
     {
         id: 3,
-        title: 'AI Engineer (LLM / Agent Systems)',
+        title: 'AI Product Manager',
         rate: '$100K–150K/year',
-        company: 'Next-gen AI Infra Startup',
-        location: 'Remote / Hybrid (US/SEA)'
+        company: 'Global AI Startup',
+        location: 'Remote / Hybrid'
     },
     {
         id: 4,
-        title: 'Founding Tech Partner / CTO',
-        rate: 'Equity + Project-Based Pay',
+        title: 'UI/UX Design Advisor',
+        rate: '$25–100/hour (Part-time)',
         company: 'Early-stage AI product studio',
         location: 'Remote / Hybrid (Shanghai)'
     }
@@ -66,71 +66,169 @@ export default function FeatureGrid() {
 
     return (
         <section
-            className="relative bg-cover bg-center py-20 min-h-screen flex items-center"
+            className="relative bg-cover bg-center py-24 min-h-screen flex items-center"
             id="opportunity"
             style={{ backgroundImage: "url('/background2.png')" }}
         >
-            <div className="section-container relative z-10 space-y-16">
-                <div>
-                    <h2 className="mb-4 text-3xl font-black text-black">
-                        Your AI agent finds you the perfect{' '}
-                        <span className="text-primary font-extrabold">AI-native opportunity</span>
-                    </h2>
-                    <p className="mb-10 max-w-xl text-black">
-                        No matter your background or industry — if you have real talent, Kora helps you discover flexible, high-impact roles at the frontier of AI
-                    </p>
-                    <div className="grid gap-10 md:grid-cols-3">
+            <div className="section-container relative z-10 max-w-7xl mx-auto">
+                {/* 第一部分：AI Agent 介绍 */}
+                <div className="text-center mb-24">
+                    <div className="mb-12">
+                        <h2 className="mb-5 text-4xl md:text-5xl font-black text-black leading-tight tracking-tight">
+                            Your AI agent finds you the perfect{' '}
+                            <span className="text-primary font-extrabold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+                                AI-native opportunity
+                            </span>
+                        </h2>
+                        <p className="mx-auto mb-12 max-w-2xl text-lg text-black/80 leading-relaxed font-medium">
+                            Apply once. Access thousands of opportunities in AI. From full-time AI-native roles to flexible projects in model training and domain expert consulting.
+                        </p>
+                    </div>
+
+                    {/* 功能卡片网格 */}
+                    <div className="grid gap-6 md:gap-8 md:grid-cols-3 max-w-5xl mx-auto">
                         {features.map((f, i) => (
                             <motion.div
                                 key={f.title}
                                 data-reveal="feature"
-                                whileHover={{ y: -6 }}
-                                className="rounded-lg bg-white/80 p-8 shadow-sm transition-shadow hover:shadow-md flex items-center gap-4 md:flex-col md:text-center"
+                                whileHover={{ 
+                                    y: -12,
+                                    transition: { duration: 0.35, ease: "easeOut" }
+                                }}
+                                className="group rounded-2xl bg-white/90 backdrop-blur-sm p-8 shadow-lg hover:shadow-2xl transition-all duration-350 border border-white/20"
                             >
-                                <div className="flex justify-center mb-0 md:mb-4 md:w-full">
-                                    {feature_svgs[i]}
-                                </div>
-                                <div>
-                                    <h3 className="mb-2 text-xl font-semibold text-primary">
-                                        {f.title}
-                                    </h3>
-                                    <p className="text-slate-700">{f.desc}</p>
+                                <div className="flex flex-col items-center text-center space-y-5">
+                                    <div className="p-4 rounded-full bg-gradient-to-br from-blue-50 to-blue-100 group-hover:from-blue-100 group-hover:to-blue-200 transition-all duration-350">
+                                        {feature_svgs[i]}
+                                    </div>
+                                    <div>
+                                        <h3 className="mb-2 text-xl font-bold text-primary tracking-tight">
+                                            {f.title}
+                                        </h3>
+                                        <p className="text-slate-600 leading-relaxed font-medium">
+                                            {f.desc}
+                                        </p>
+                                    </div>
                                 </div>
                             </motion.div>
                         ))}
                     </div>
                 </div>
-                <div>
-                    <h3 className="mb-8 text-3xl font-black text-black">
-                        AI-native Work You Can Join Today
-                    </h3>
-                    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+
+                {/* 分隔线 - Apple 风格 */}
+                <div className="relative mb-24">
+                    <div className="absolute inset-0 flex items-center">
+                        <div className="w-full border-t border-black/10"></div>
+                    </div>
+                    <div className="relative flex justify-center">
+                        <div className="bg-white px-6 py-3 rounded-full shadow-sm border border-black/5">
+                            <div className="w-2 h-2 bg-primary rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* 第二部分：职位列表 */}
+                <div className="text-center">
+                    <div className="mb-12">
+                        <h3 className="mb-8 text-4xl md:text-5xl font-black text-black tracking-tight">
+                            AI-native Work You Can Join Today
+                        </h3>
+                    </div>
+
+                    {/* 职位卡片网格 */}
+                    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-12">
                         {jobs.map((job, i) => (
                             <motion.article
                                 key={job.id}
                                 data-reveal="job"
                                 whileHover={{ y: -8 }}
-                                className="rounded-lg bg-white/90 p-6 shadow-sm transition-shadow hover:shadow-md flex items-center gap-4 md:flex-col md:text-center"
+                                className="group rounded-2xl bg-white/95 backdrop-blur-sm p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/20"
                             >
-                                <div className="flex justify-center mb-0 md:mb-4 md:w-full">
-                                    {job_svgs[i]}
-                                </div>
-                                <div>
-                                    <h4 className="mb-1 text-lg font-semibold">{job.title}</h4>
-                                    <p className="text-sm text-slate-600">Rate: {job.rate}</p>
-                                    <p className="text-sm text-slate-600">Company: {job.company}</p>
-                                    <p className="text-sm text-slate-600">Location: {job.location}</p>
+                                <div className="flex flex-col items-center text-center space-y-4">
+                                    <div className="p-3 rounded-full bg-gradient-to-br from-slate-50 to-slate-100 group-hover:from-slate-100 group-hover:to-slate-200 transition-all duration-300">
+                                        {job_svgs[i]}
+                                    </div>
+                                    <div className="space-y-2">
+                                        <h4 className="text-lg font-bold text-slate-900 leading-tight">
+                                            {job.title}
+                                        </h4>
+                                        <div className="space-y-1 text-sm">
+                                            <p className="text-slate-600 font-semibold">
+                                                Rate: {job.rate}
+                                            </p>
+                                            <p className="text-slate-600">
+                                                Company: {job.company}
+                                            </p>
+                                            <p className="text-slate-600">
+                                                Location: {job.location}
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </motion.article>
                         ))}
                     </div>
-                    <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-                        <button className="rounded-md bg-gradient-to-r from-primary to-accent bg-[length:200%_200%] px-6 py-3 font-medium text-white shadow-md animate-gradient">
-                            Apply for Work
-                        </button>
-                        <button className="rounded-md bg-gradient-to-r from-primary to-accent bg-[length:200%_200%] px-6 py-3 font-medium text-white shadow-md animate-gradient">
-                            Talent Onboarding Guide
-                        </button>
+
+                    {/* 行动按钮 - Apple 风格重设计 */}
+                    <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-center">
+                        {/* 主要按钮 - Apply for Work */}
+                        <motion.button 
+                            initial={{ scale: 1, y: 0 }}
+                            animate={{ scale: 1, y: 0 }}
+                            whileHover={{ 
+                                scale: 1.05,
+                                y: -2,
+                                transition: { duration: 0.3, ease: "easeOut" }
+                            }}
+                            whileTap={{ scale: 0.98 }}
+                            transition={{ duration: 0.15, ease: "easeOut" }}
+                            className="group relative overflow-hidden bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 
+                                     rounded-2xl px-10 py-4 font-semibold text-white shadow-xl hover:shadow-2xl 
+                                     transition-all duration-300 backdrop-blur-sm border border-blue-500/20
+                                     min-w-[200px] text-center"
+                        >
+                            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 
+                                          opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div className="absolute inset-0 bg-white/10 rounded-2xl opacity-0 group-hover:opacity-100 
+                                          transition-opacity duration-300 backdrop-blur-sm"></div>
+                            <span className="relative z-10 flex items-center justify-center gap-2">
+                                Apply for Work
+                                <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" 
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
+                                          d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                </svg>
+                            </span>
+                            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent 
+                                          -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                        </motion.button>
+
+                        {/* 次要按钮 - Talent Guide */}
+                        <motion.button 
+                            initial={{ scale: 1, y: 0 }}
+                            animate={{ scale: 1, y: 0 }}
+                            whileHover={{ 
+                                scale: 1.02,
+                                y: -1,
+                                transition: { duration: 0.25, ease: "easeOut" }
+                            }}
+                            whileTap={{ scale: 0.98 }}
+                            transition={{ duration: 0.15, ease: "easeOut" }}
+                            className="group relative overflow-hidden bg-white/5 backdrop-blur-md 
+                                     rounded-2xl px-10 py-4 font-medium text-gray-700 hover:text-gray-900
+                                     border border-gray-200/50 hover:border-gray-300/70 shadow-lg hover:shadow-xl 
+                                     transition-all duration-300 min-w-[200px] text-center"
+                        >
+                            <div className="absolute inset-0 bg-gradient-to-r from-blue-50/30 to-indigo-50/30 
+                                          opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                            <span className="relative z-10 flex items-center justify-center gap-2">
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
+                                          d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C20.168 18.477 18.582 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                </svg>
+                                Talent Guide
+                            </span>
+                        </motion.button>
                     </div>
                 </div>
             </div>

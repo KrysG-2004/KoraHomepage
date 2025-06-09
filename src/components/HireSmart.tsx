@@ -35,7 +35,7 @@ export default function HireSmart() {
                         Hire smarter with AI-vetted, execution-ready talent
                     </h2>
                     <p className="mt-4 text-lg text-gray-700">
-                        Still struggling to find the right people to train your models or build your AI product? Kora makes it simple — just tell us your need. We’ll match you with top talent, fast
+                        Still struggling to find the right people to train your models or build your AI product? Kora makes it simple — just tell us your need. We'll match you with top talent, fast
                     </p>
                 </div>
 
@@ -74,7 +74,7 @@ export default function HireSmart() {
 
                 {/* 按钮与说明 */}
                 <div data-reveal="hire" className="text-center">
-                    <button className="mt-8 rounded-md bg-gradient-to-r from-primary to-accent px-8 py-3 font-medium text-white shadow-md animate-gradient hover:from-primary-dark hover:to-accent-dark transition">
+                    <button className="btn-shimmer mt-8 rounded-md px-8 py-3 font-medium text-white shadow-md">
                         Start Hiring
                     </button>
                     <p className="mt-4 font-semibold text-gray-900">

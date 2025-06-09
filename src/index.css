@@ -15,6 +15,80 @@ body {
   .section-container {
     @apply container mx-auto max-w-screen-xl px-4;
   }
+  
+  /* 流光按钮样式 */
+  .btn-shimmer {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+      90deg,
+      #316CFF 0%,
+      #6D88FF 25%,
+      #ffffff 50%,
+      #6D88FF 75%,
+      #316CFF 100%
+    );
+    background-size: 400% 100%;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-shimmer:hover {
+    animation: shimmer 2s linear infinite;
+    box-shadow: 0 0 20px rgba(49, 108, 255, 0.5);
+    transform: translateY(-2px);
+  }
+  
+  /* 白色边框流光按钮 */
+  .btn-shimmer-outline {
+    position: relative;
+    overflow: hidden;
+    background: white;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  
+  .btn-shimmer-outline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    margin: -2px;
+    border-radius: inherit;
+    background: linear-gradient(
+      90deg,
+      #316CFF 0%,
+      #6D88FF 25%,
+      #ffffff 50%,
+      #6D88FF 75%,
+      #316CFF 100%
+    );
+    background-size: 400% 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .btn-shimmer-outline:hover::before {
+    opacity: 1;
+    animation: shimmer 2s linear infinite;
+  }
+  
+  .btn-shimmer-outline:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(49, 108, 255, 0.3);
+  }
+}
+
+/* 流光动画关键帧 */
+@keyframes shimmer {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 400% 0%;
+  }
 }
 
 /* 卡片整体 */

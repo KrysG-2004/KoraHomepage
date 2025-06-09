@@ -4,29 +4,29 @@ import { useScrollReveal } from '../hooks/useScrollReveal'
 const jobs = [
     {
         id: 1,
-        title: 'Domain Expert for AI Evaluation',
-        rate: '$30–200/hour',
-        company: 'Applied AI Lab',
+        title: 'Domain Expert for AI Training & Consulting (No coding required)',
+        rate: '$35–150/hour (Part-time)',
+        company: 'Top AI Lab',
         location: 'Remote (CN preferred)'
     },
     {
         id: 2,
-        title: 'Software Engineer – AI Training Tasks',
-        rate: '$30–80/hour',
-        company: 'Global AI Startup',
-        location: 'Remote (Flexible timezone)'
+        title: 'AI Training Intern — Top University Students Only',
+        rate: '$5–80/hour (Part-time/Full-time)',
+        company: 'Fortune 500 tech firm',
+        location: 'Remote'
     },
     {
         id: 3,
-        title: 'AI Engineer (LLM / Agent Systems)',
+        title: 'AI Product Manager',
         rate: '$100K–150K/year',
-        company: 'Next-gen AI Infra Startup',
-        location: 'Remote / Hybrid (US/SEA)'
+        company: 'Global AI Startup',
+        location: 'Remote / Hybrid'
     },
     {
         id: 4,
-        title: 'Founding Tech Partner / CTO',
-        rate: 'Equity + Project-Based Pay',
+        title: 'UI/UX Design Advisor',
+        rate: '$25–100/hour (Part-time)',
         company: 'Early-stage AI product studio',
         location: 'Remote / Hybrid (Shanghai)'
     }

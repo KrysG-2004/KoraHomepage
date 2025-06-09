@@ -15,6 +15,8 @@ export default function Footer() {
                         <a href="#opportunity" className="hover:text-primary">Opportunity</a>
                         <a href="#community" className="hover:text-primary">Community</a>
                         <a href="#hire" className="hover:text-primary">Hire</a>
+                        <a href="#talent" className="hover:text-primary">Join as Talent</a>
+                        <a href="#human-data" className="hover:text-primary">Learn more about Human Data</a>
                     </nav>
                 </div>
                 <div className="space-y-4">

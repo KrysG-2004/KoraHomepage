@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useScrollReveal } from '../hooks/useScrollReveal'
+import DisplayCards from './ui/display-cards'
 
 const svgs = [
     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -27,7 +28,7 @@ const svgs = [
             </linearGradient>
         </defs>
         <path d="M20,4a2.09,2.09,0,0,0-2.95.12L10.17,11,9,15l4-1.17L19.88,7A2.09,2.09,0,0,0,20,4Z" fill="none" stroke="url(#paint0_linear_feature1)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-        <path d="M12,3H4A1,1,0,0,0,3,4V20a1,1,0,0,0,1,1H20a1,1,0,0,0,1-1V12" fill="none" stroke="url(#paint0_linear_feature1)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+        <path d="M12,3H4A1,1,0,0,0,3,4V20a1,1,0,0,1,1H20a1,1,0,0,1-1V12" fill="none" stroke="url(#paint0_linear_feature1)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
     </svg>,
     <svg width="30" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="icon line-color">
         <defs>
@@ -54,9 +55,9 @@ const svgs = [
 ]
 
 const points = [
-    'Moves beyond synthetic or crowdsourced labels',
-    'Captures high-context, expert-level workflows',
-    'Powers agent training, evaluation & post-training tuning'
+    'Goes beyond synthetic or low-quality crowdsourced labels',
+    'Captures high-context, expert-driven thinking and workflows',
+    'Powers high-quality model training, alignment, and safety evaluation'
 ]
 
 export default function WhyHumanData() {
@@ -64,41 +65,97 @@ export default function WhyHumanData() {
 
     return (
         <section
-            className="relative bg-cover bg-center py-20 min-h-screen flex items-center"
+            className="relative bg-cover bg-center py-16 min-h-screen flex flex-col justify-center"
             id="human-data"
             style={{ backgroundImage: "url('/background5.png')" }}
         >
-            <div className="section-container relative z-10 text-center">
-                <h2 className="text-3xl font-bold">
-                    Human Data That&nbsp;<span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Actually&nbsp;Improves&nbsp;AI</span>
-                </h2>
-                <p className="mx-auto mt-4 max-w-3xl text-slate-700">
-                    The most impactful AI systems aren’t just trained on code or content — but on how real people reason, decide, and solve problems. <br/>
-                    Kora specializes in Human Data — to help AI learn from how great people work.
-                </p>
-                <h3 className="text-2xl font-semibold mt-8 mb-4">
-                    <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                        Why Human Data?
-                    </span>
-                </h3>
-                <ul className="mt-4 grid gap-6 md:grid-cols-3">
-                    {points.map((p, i) => (
-                        <motion.li
-                            key={p}
-                            data-reveal="why"
-                            whileHover={{ y: -6 }}
-                            className="rounded-md border p-6 shadow-sm transition-shadow hover:shadow-md flex items-center gap-4 md:flex-col md:text-center"
-                        >
-                            {svgs[i]}
-                            <p className="mt-0 text-lg font-medium text-slate-800 md:mt-4">
-                                {p}
-                            </p>
-                        </motion.li>
-                    ))}
-                </ul>
-                <button className="mt-10 rounded-md bg-primary px-6 py-3 font-medium text-white transition hover:bg-primary/90">
-                    → Learn more about Human Data
-                </button>
+            <div className="section-container relative z-10">
+                {/* 顶部简洁标题部分 */}
+                <div className="text-center mb-20">
+                    <motion.h2 
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+                        className="text-3xl md:text-4xl lg:text-5xl font-black text-black leading-tight tracking-tight mb-8"
+                    >
+                        Human Data That&nbsp;
+                        <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+                            Actually&nbsp;Improves&nbsp;AI
+                        </span>
+                    </motion.h2>
+                    
+                    <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+                        className="max-w-4xl mx-auto space-y-3"
+                    >
+                        <p className="text-lg text-slate-700 font-medium leading-relaxed">
+                            The most impactful AI systems aren't just trained on code or content — 
+                            but on how real people reason, decide, and solve problems.
+                        </p>
+                        <p className="text-lg text-slate-700 font-medium leading-relaxed">
+                            Kora specializes in Human Data — to help AI learn from how great people work.
+                        </p>
+                    </motion.div>
+                </div>
+
+                {/* 核心内容：左右分离布局 */}
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20 max-w-none mx-auto px-4 lg:px-8">
+                    {/* 左侧：Why Human Data 标题 - 往左对齐 */}
+                    <div className="lg:w-2/5 flex justify-center lg:justify-start" data-reveal="why">
+                        <div className="text-center lg:text-left">
+                            <motion.h3 
+                                initial={{ opacity: 0, x: -50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+                                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-slate-900 leading-tight mb-6"
+                            >
+                                Why
+                                <br />
+                                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
+                                    Human
+                                </span>
+                                <br />
+                                Data?
+                            </motion.h3>
+                            
+                            {/* 装饰性描述 */}
+                            <motion.p 
+                                initial={{ opacity: 0, x: -30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+                                className="text-lg text-slate-600 leading-relaxed max-w-md mx-auto lg:mx-0"
+                            >
+                                Discover the three key advantages that make human data essential for next-generation AI systems.
+                            </motion.p>
+                        </div>
+                    </div>
+
+                    {/* 右侧：堆叠卡片 - 往右对齐 */}
+                    <div className="lg:w-3/5 flex justify-center lg:justify-end">
+                        <div className="relative" data-reveal="why">
+                            <DisplayCards />
+                        </div>
+                    </div>
+                </div>
+
+                {/* 底部按钮 */}
+                <div className="text-center mt-20">
+                    <motion.button 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                        className="rounded-md bg-primary px-8 py-4 font-medium text-white transition hover:bg-primary/90 hover:scale-105"
+                    >
+                        → Learn more about Human Data
+                    </motion.button>
+                </div>
             </div>
         </section>
     )
