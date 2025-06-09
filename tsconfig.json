@@ -3,7 +3,7 @@
     "target": "ES2018",
     "lib": ["DOM", "DOM.Iterable", "ES2018"],
     "types": ["vite/client"],
-    "allowJs": false,
+    "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
